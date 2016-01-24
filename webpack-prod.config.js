@@ -5,13 +5,13 @@ module.exports = {
   devtool: 'source-map',
 
   entry: [
-    './src/entry'
+    './public/index.js'
   ],
 
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/public/'
+    path: path.join(__dirname, 'public/dist'),
+    filename: 'app.js',
+    publicPath: '/public/dist'
   },
 
   plugins: [
@@ -32,13 +32,13 @@ module.exports = {
     loaders: [
       { test: /\.jsx?$/,
         loader: 'babel?stage=0',
-        include: path.join(__dirname, 'src') },
+        include: path.join(__dirname, 'public') },
       { test: /\.js?$/,
         loader: 'babel?stage=0',
         exclude: /node_modules/ },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
-        include: path.join(__dirname, 'css') },
+        include: path.join(__dirname, 'public/css') },
     ]
   }
 }
