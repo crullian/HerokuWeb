@@ -7,13 +7,13 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './src/entry'
+    './public/index.js'
   ],
 
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
-    publicPath: '/public/'
+    path: path.join(__dirname, 'public/dist'),
+    filename: 'app.js',
+    publicPath: '/public/dist'
   },
 
   plugins: [
@@ -29,13 +29,13 @@ module.exports = {
     loaders: [
       { test: /\.jsx$/,
         loader: 'react-hot!babel?stage=0',
-        include: path.join(__dirname, 'src') },
+        include: path.join(__dirname, 'public') },
       { test: /\.js$/,
         loader: 'babel?stage=0',
-        include: path.join(__dirname, 'src') },
+        include: path.join(__dirname, 'public') },
       { test: /\.scss?$/,
         loader: 'style!css!sass',
-        include: path.join(__dirname, 'css') },
+        include: path.join(__dirname, 'public/css') },
       { test: /\.css$/,
         loader: 'style!css' }
     ]
