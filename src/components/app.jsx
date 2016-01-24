@@ -8,7 +8,7 @@ export default class App extends React.Component {
   render() {
     return(
       <div>
-        <h1>Working so nicely!</h1>
+        <h1>Working you jerk!</h1>
       </div>
     )
   }
